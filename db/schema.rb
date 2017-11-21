@@ -661,10 +661,7 @@ ActiveRecord::Schema.define(version: 20170821152429) do
     t.integer  "organisation_id"
   end
 
-<<<<<<< HEAD
-  create_table "links_reports", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-=======
-  create_table "link_checker_api_report_links", force: :cascade do |t|
+  create_table "link_checker_api_report_links", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "link_checker_api_report_id", limit: 4
     t.string   "uri",                        limit: 255,   null: false
     t.string   "status",                     limit: 255,   null: false
@@ -680,7 +677,7 @@ ActiveRecord::Schema.define(version: 20170821152429) do
 
   add_index "link_checker_api_report_links", ["link_checker_api_report_id"], name: "index_link_checker_api_report_id", using: :btree
 
-  create_table "link_checker_api_reports", force: :cascade do |t|
+  create_table "link_checker_api_reports", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "batch_id",             limit: 4,   null: false
     t.string   "status",               limit: 255, null: false
     t.string   "link_reportable_type", limit: 255
@@ -692,8 +689,7 @@ ActiveRecord::Schema.define(version: 20170821152429) do
 
   add_index "link_checker_api_reports", ["batch_id"], name: "index_link_checker_api_reports_on_batch_id", unique: true, using: :btree
 
-  create_table "links_reports", force: :cascade do |t|
->>>>>>> Link Checker API models
+  create_table "links_reports", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.text     "links",                limit: 16777215
     t.text     "broken_links",         limit: 65535
     t.string   "status"
