@@ -82,11 +82,6 @@ ActiveRecord::Schema.define(version: 20170821152429) do
     t.index ["ordering"], name: "index_attachments_on_ordering", using: :btree
   end
 
-  add_index "attachments", ["attachable_id", "attachable_type"], name: "index_attachments_on_attachable_id_and_attachable_type", using: :btree
-  add_index "attachments", ["attachable_type", "attachable_id", "ordering"], name: "no_duplicate_attachment_orderings", unique: true, using: :btree
-  add_index "attachments", ["attachment_data_id"], name: "index_attachments_on_attachment_data_id", using: :btree
-  add_index "attachments", ["ordering"], name: "index_attachments_on_ordering", using: :btree
-
   create_table "classification_featuring_image_data", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "carrierwave_image"
     t.datetime "created_at"
